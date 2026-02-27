@@ -604,4 +604,19 @@ contract StablePool is IStablePool {
     receive() external payable {
         revert("StablePool: use swap()");
     }
+
+    /// @notice Get contract version
+    function getVersion() external pure returns (string memory) {
+        return "1.0.0";
+    }
+
+    /// @notice Get fee recipient address
+    function getFeeRecipient() external view returns (address) {
+        return feeRecipient;
+    }
+
+    /// @notice Get swap fee amount
+    function getSwapFee() external pure returns (uint256) {
+        return SWAP_FEE;
+    }
 }
